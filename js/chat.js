@@ -8,7 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayMessage(message, sender) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', `${sender}-message`);
-        messageElement.textContent = message;
+
+        if (sender === 'ai') {
+            // For AI messages, replace Markdown bold with <strong> HTML tags
+            const processedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            messageElement.innerHTML = processedMessage; // Use innerHTML to render the HTML
+        } else {
+            // For user messages, display as plain text to prevent HTML injection
+            messageElement.textContent = message;
+        }
+
         chatMessages.appendChild(messageElement);
         // Scroll to the bottom of the chat messages
         chatMessages.scrollTop = chatMessages.scrollHeight;
