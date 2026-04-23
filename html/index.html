@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat IA pour enseignants</title>
+    <title>Rogue Flip Pong 3D</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div id="chat-container">
-        <h1>Chat IA pour enseignants</h1>
-        <div id="chat-messages">
-            <!-- Les messages du chat apparaîtront ici -->
-        </div>
-        <div id="chat-input">
-            <input type="text" id="message-input" placeholder="Tapez votre message ici...">
-            <button id="send-button">Envoyer</button>
-        </div>
+    <div id="hud">
+        <h1>Rogue Flip Pong</h1>
+        <p>Déplace la raquette (A/D ou ←/→), active les flippers (Q/E).</p>
+        <p>Niveaux: <span id="level">1</span> · Vie: <span id="lives">3</span> · Score: <span id="score">0</span></p>
     </div>
-    <script src="../js/chat.js"></script>
+
+    <canvas id="game-canvas"></canvas>
+
+    <script type="module" src="../js/chat.js"></script>
 </body>
 </html>
